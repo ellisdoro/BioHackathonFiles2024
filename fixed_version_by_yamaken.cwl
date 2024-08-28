@@ -7,13 +7,14 @@ cwlVersion: v1.2
 
 requirements:
   DockerRequirement:
-    dockerPull: biocontainers/bcftools
+    dockerPull: biocontainers/bcftools:v1.9-1-deb_cv1
 
 baseCommand: [bcftools]
 
 arguments:
   - position: 1
     valueFrom: annotate
+  - $(inputs.vcf.basename).togovar.vcf.gz
 
 inputs:
   colname:
@@ -41,4 +42,4 @@ outputs:
   outputfile:
     type: File
     outputBinding:
-      glob: $(inputs.vcf.nameroot)_togovar.vcf
+      glob: $(inputs.vcf.basename).togovar.vcf.gz
