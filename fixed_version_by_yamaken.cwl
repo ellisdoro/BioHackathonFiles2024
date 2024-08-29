@@ -8,20 +8,18 @@ cwlVersion: v1.2
 requirements:
   DockerRequirement:
     dockerPull: biocontainers/bcftools:v1.9-1-deb_cv1
+  InlineJavascriptRequirement: {}
 
 baseCommand: [bcftools]
 
 arguments:
   - position: 1
     valueFrom: annotate
-  # - position: 6
-  #   prefix: -o
-  #   valueFrom: $(inputs.vcf.nameroot).togovar.vcf.gz
 
 inputs:
   colname:
     type: string?
-    default: TGV,-,CHROM,POS,-,-,-,-,-,-,-,-,-,-
+    default: TGV,-,CHROM,POS,REF,ALT,-,-,-,-,-,-,-,-
     inputBinding:
       position: 2
       prefix: -c
@@ -41,13 +39,21 @@ inputs:
       position: 5
   output_name:
     type: string
+    default: 'togovar.vcf.gz'
     inputBinding:
       position: 6
       prefix: -o
-      valueFrom: $(inputs.vcf.slice(0,-7)).togovar.vcf.gz
+      valueFrom: $(runtime.outdir)/$(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
 
 outputs:
   outputfile:
-    type: File
+    type:
+      type: array
+      items:
+      - File
+      - Directory
     outputBinding:
-      glob: $(inputs.output_name)
+      glob: "*"
+    # type: File
+    # outputBinding:
+    #   glob: $(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
