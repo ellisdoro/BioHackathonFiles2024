@@ -30,7 +30,6 @@ inputs:
       prefix: --annotations
     secondaryFiles:
       - .tbi
-
   header:
     type: File
     inputBinding:
@@ -46,17 +45,10 @@ inputs:
     inputBinding:
       position: 6
       prefix: -o
-      valueFrom: $(runtime.outdir)/$(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
+      valueFrom: $(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
 
 outputs:
   outputfile:
-    type:
-      type: array
-      items:
-      - File
-      - Directory
+    type: File
     outputBinding:
-      glob: "*"
-    # type: File
-    # outputBinding:
-    #   glob: $(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
+      glob: $(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
