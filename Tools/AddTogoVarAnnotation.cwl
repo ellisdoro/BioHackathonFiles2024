@@ -7,7 +7,7 @@ cwlVersion: v1.2
 
 requirements:
   DockerRequirement:
-    dockerPull: ghcr.io/uclahs-cds/bcftools:1.20
+    dockerPull: biocontainers/bcftools:v1.9-1-deb_cv1
   InlineJavascriptRequirement: {}
 
 baseCommand: [bcftools]
@@ -28,6 +28,8 @@ inputs:
     inputBinding:
       position: 3
       prefix: --annotations
+    secondaryFiles:
+      - .tbi
   header:
     type: File
     inputBinding:
@@ -43,14 +45,10 @@ inputs:
     inputBinding:
       position: 6
       prefix: -o
-      valueFrom: $(runtime.outdir)/$(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
+      valueFrom: $(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
 
 outputs:
   outputfile:
-    type:
-      type: array
-      items:
-      - File
-      - Directory
+    type: File
     outputBinding:
-      glob: "*"
+      glob: $(inputs.vcf.basename.slice(0, -7))_togovar.vcf.gz
