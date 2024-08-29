@@ -28,6 +28,9 @@ inputs:
     inputBinding:
       position: 3
       prefix: --annotations
+    secondaryFiles:
+      - .tbi
+
   header:
     type: File
     inputBinding:
