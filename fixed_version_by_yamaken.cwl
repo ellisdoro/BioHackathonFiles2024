@@ -14,7 +14,9 @@ baseCommand: [bcftools]
 arguments:
   - position: 1
     valueFrom: annotate
-  - $(inputs.vcf.basename).togovar.vcf.gz
+  # - position: 6
+  #   prefix: -o
+  #   valueFrom: $(inputs.vcf.nameroot).togovar.vcf.gz
 
 inputs:
   colname:
@@ -37,9 +39,15 @@ inputs:
     type: File
     inputBinding:
       position: 5
+  output_name:
+    type: string
+    inputBinding:
+      position: 6
+      prefix: -o
+      valueFrom: $(inputs.vcf.slice(0,-7)).togovar.vcf.gz
 
 outputs:
   outputfile:
     type: File
     outputBinding:
-      glob: $(inputs.vcf.basename).togovar.vcf.gz
+      glob: $(inputs.output_name)
