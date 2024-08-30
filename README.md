@@ -20,7 +20,7 @@ Outputs
 
 This repository contains a Nextflow configuration file (nextflow.config) and a workflow script (germline-minicactus.nf) to process genomic data using Samtools, Cactus, and VG.
 
-###Usage
+## Usage
 
 To run the workflow, use the following command:
 
