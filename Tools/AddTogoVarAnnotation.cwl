@@ -1,8 +1,8 @@
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
-id: vcf-togovar-annotation
-label: vcf-togovar-annotation
+id: add-togovar-annotation
+label: add-togovar-annotation
 cwlVersion: v1.2
 
 requirements:
@@ -18,8 +18,9 @@ arguments:
 
 inputs:
   colname:
-    type: string?
+    type: string
     default: TGV,-,CHROM,POS,REF,ALT,-,-,-,-,-,-,-,-
+    doc: please see bcftools annotate Manual Page
     inputBinding:
       position: 2
       prefix: -c
