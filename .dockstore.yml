@@ -2,7 +2,6 @@ version: 1.2
 workflows:
   - subclass: CWL
     primaryDescriptorPath: /Tools/AddTogoVarAnnotation.cwl
-    readMePath: README.md
     name: togovar_annotation
     authors:
       - name: Dorothy DeMore Ellis
@@ -10,7 +9,6 @@ workflows:
     topic: Variant Annotation
   - subclass: NFL
     primaryDescriptorPath: /nextflow.config
-    readMePath: README.md
     name: pangenome_cactus
     authors:
       - name: Pitiporn Noisagul
