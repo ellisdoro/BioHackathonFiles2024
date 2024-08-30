@@ -1,0 +1,16 @@
+version: 1.2
+tools:
+  - subclass: CWL
+    primaryDescriptorPath: /Tools/AddTogoVarAnnotation.cwl
+    name: togovar_annotator
+    authors:
+      - name: Dorothy DeMore Ellis
+      - name: Kentaro Yamamoto
+    topic: Variant Annotation
+workflows:
+  - subclass: NFL
+    primaryDescriptorPath: /nextflow.config
+    name: pangenome_cactus
+    authors:
+      - name: Pitiporn Noisagul
+    topic: Germline Analysis
