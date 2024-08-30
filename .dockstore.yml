@@ -8,7 +8,6 @@ workflows:
       - name: Dorothy DeMore Ellis
       - name: Kentaro Yamamoto
     topic: Variant Annotation
-
   - subclass: NFL
     primaryDescriptorPath: /nextflow.config
     readMePath: README.md
