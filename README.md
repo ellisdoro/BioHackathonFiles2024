@@ -15,3 +15,25 @@ Inputs
 Outputs
 
     outputfile: The annotated VCF file, with TogoVar information integrated.
+    
+# Workflow for Mini Cactus
+
+This repository contains a Nextflow configuration file (nextflow.config) and a workflow script (germline-minicactus.nf) to process genomic data using Samtools, Cactus, and VG.
+
+###Usage
+
+To run the workflow, use the following command:
+
+```bash
+
+nextflow run germline-minicactus.nf -c nextflow.config
+
+```
+
+Key Parameters
+
+    cram_list: Path to the file containing a list of CRAM files.
+    ref: Reference genome file path.
+    outdir: Output directory for results.
+
+Ensure Docker is installed and configured, as the workflow relies on Docker containers for reproducible environments.
