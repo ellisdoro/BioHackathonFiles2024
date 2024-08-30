@@ -3,7 +3,7 @@ workflows:
   - subclass: CWL
     primaryDescriptorPath: /Tools/AddTogoVarAnnotation.cwl
     readMePath: README.md
-    name: TogoVarAnnotation
+    name: togovar_annotation
     authors:
       - name: Dorothy DeMore Ellis
       - name: Kentaro Yamamoto
@@ -12,7 +12,7 @@ workflows:
   - subclass: NFL
     primaryDescriptorPath: /nextflow.config
     readMePath: README.md
-    name: PangenomeCactus
+    name: pangenome_cactus
     authors:
       - name: Pitiporn Noisagul
     topic: Germline Analysis
