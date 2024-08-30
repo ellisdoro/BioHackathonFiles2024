@@ -1,0 +1,16 @@
+version: 1.2
+workflows:
+  - subclass: CWL
+    primaryDescriptorPath: ./Tools/AddTogoVarAnnotation.cwl
+    readMePath: README.md
+    authors:
+      - name: Dorothy DeMore Ellis
+      - name: Kentaro Yamamoto
+    topic: Variant Annotation
+
+  - subclass: NFL
+    primaryDescriptorPath: ./nextflow.config
+    readMePath: README.md
+    authors:
+      - name: Pitiporn Noisagul
+    topic: Germline Analysis
