@@ -1,0 +1,3 @@
+sampleId,cram
+SP01,path/to/sample/cram/S1.cram
+SP02,path/to/sample/cram/S2.cram
