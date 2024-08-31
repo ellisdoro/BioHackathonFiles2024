@@ -14,6 +14,7 @@ This repository contains a Common Workflow Language (CWL) script for annotating 
   - The genomic coordinate is GRCH38.
 - header: Header file for the VCF format.
   - https://grch38.togovar.org/downloads/release/current/grch38/annotation/scripts/annots.hdr
+  - or, https://github.com/ellisdoro/BioHackathonFiles2024/blob/main/annots.hdr
   - The tgvid in the hdr file is the variant ID assigned by TogoVar.
 - vcf: The VCF file to be annotated.
 - output_name: The desired name for the output file.
