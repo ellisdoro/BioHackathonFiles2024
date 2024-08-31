@@ -33,11 +33,25 @@ cwltool \
 ```
 
     
-# Workflow for Mini Cactus
+# Cactus Pangenome Graph Pipeline
 
-This repository contains a Nextflow configuration file (nextflow.config) and a workflow script (germline-minicactus.nf) to process genomic data using Samtools, Cactus, and VG.
+This repository contains a Nextflow configuration file (config.config) and a workflow script (germline-minicactus.nf) to process genomic data using Samtools, Cactus, and VG.
 
 ## Usage
+
+**Input:**
+You need to prepare a list of input genomes in a CSV file. This file should include paths to the genome files and any associated metadata required by the pipeline.
+Configuration File (config.config): This file sets up the necessary parameters for the pipeline, including the path to the single reference genome, CPU, memory specifications, and other environment settings.
+
+```
+sampleId,cram
+SP01,path/to/sample/cram/S1.cram
+SP02,path/to/sample/cram/S2.cram
+```
+
+
+The pipeline is executed using the Nextflow workflow manager. It aligns the input genomes against the single reference genome to construct a pangenome graph. The workflow runs within a Docker container, ensuring a consistent environment. Alternatively, Singularity can be used if Docker is not preferred.
+
 
 To run the workflow, use the following command:
 
